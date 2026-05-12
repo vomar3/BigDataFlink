@@ -35,3 +35,19 @@
 2. Файл docker-compose.yml с установкой PostgreSQL, Flink, Kafka и запуском приложения, которое из файлов mock_data(*).csv создает сообщения json в Kafka.
 3. Инструкция, как запускать Flink-джобу и приложение для отправки данных в Kafka для проверки лабораторной работы.
 4. Код Apache Flink для трансформации данных в режиме streaming.
+
+# Запуск:
+Для результатов:
+```markdown
+git clone https://github.com/vomar3/BigDataFlink
+cd BigDataFlink
+docker compose up --build --abort-on-container-exit --exit-code-from verifier verifier
+```
+
+Для поднятия UI
+```markdown
+docker compose up -d --build
+
+- Apache Flink доступен по http://localhost:8081
+- Kafka UI доступен по http://localhost:8085
+```
