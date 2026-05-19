@@ -51,3 +51,15 @@ docker compose up -d --build
 - Apache Flink доступен по http://localhost:8081
 - Kafka UI доступен по http://localhost:8085
 ```
+
+# Исследование стратегий партиционирования Kafka
+
+## Запуск без ключа
+Kafka topic mock_data имеет 4 partitions. 10000 сообщений распределились почти равномерно между partitions.
+
+![No key](screens/image.png)
+
+## Запуск с ключом
+Все сообщения имеют одинаковый key, поэтому Kafka направила все 10000 сообщений в одну partition.
+
+![Key](screens/image-1.png)
